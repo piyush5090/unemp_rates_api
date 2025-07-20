@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../db/mysql");
+const db = require("../db/mySql");
 const verifyApiKey = require("../middlewares/verifyApiKey");
 
 router.get("/country/:code", async (req,res) => {
@@ -127,6 +127,18 @@ router.post("/edit", verifyApiKey, async (req,res) => {
     }catch(err){
         res.status(500).json({message: "Internal Server error" ,error : err.message});
     }
-})
+});
+
+router.get("/allCountries", async (req,res)=>{
+    try{
+        const [data] = await db.query(
+            `SELECT * FROM countries`
+        );
+
+        res.json(data);
+    }catch(err){
+        res.status(500).json({Message: "Internal Server error", err});
+    }
+});
 
 module.exports = router;

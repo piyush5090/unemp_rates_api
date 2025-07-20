@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
-body{
-  background-color: black;
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Background image with opacity using ::before */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://media.istockphoto.com/id/172752359/photo/folded-sheet-of-paper-with-an-unemployment-graph-on.jpg?s=612x612&w=0&k=20&c=KxEJwjUhDxjC7ZmklYL3QG4LJfcfMAQ7-DgqOdCuB7c=");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* 👈 Adjust transparency here */
+  z-index: -1;
 }

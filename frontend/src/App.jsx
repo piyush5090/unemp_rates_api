@@ -3,7 +3,7 @@ import img from "./assets/img.png";
 import ssAll from "./assets/ssAll.png";
 import ssSingle from "./assets/ssSingle.png";
 import ssSingleYear from "./assets/ssSingleYear.png";
-import ssYearRange from "./assets/ssyearRange.png";
+import ssYearRange from "./assets/ssYearRange.png";
 import ssBody from "./assets/ssBody.png";
 import ssHeader from "./assets/ssHeader.png";
 import editOutput from "./assets/editOutput.png";
@@ -15,16 +15,16 @@ function App() {
   const [isPublic, setIsPublic] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  const baseUrl = "http://localhost:5000/api/unemployment";
-  const allUrl = "http://localhost:5000/api/unemployment/all/country";
-  const allUrlExample = "http://localhost:5000/api/unemployment/all/country";
-  const singleCountry = "http://localhost:5000/api/unemployment/country/${countryCode}";
-  const singleCountryExample = "http://localhost:5000/api/unemployment/country/IN";
-  const selectedYear = "http://localhost:5000/api/unemployment/country/${countryCode}/year/${year}";
-  const selectedYearExample = "http://localhost:5000/api/unemployment/country/IN/year/2009";
-  const yearRange = "http://localhost:5000/api/unemployment/country/${countryCode}/fromYear/${fromYear}/toYear/${toYear}";
-  const yearRangeExample = "http://localhost:5000/api/unemployment/country//fromYear/2000/toYear/2002";
-  const editUrl = "http://localhost:5000/api/unemployment/edit";
+  const baseUrl = "https://unemp-rates-api-4.onrender.com/api/unemployment";
+  const allUrl = "https://unemp-rates-api-4.onrender.com/api/unemployment/all/country";
+  const allUrlExample = "https://unemp-rates-api-4.onrender.com/api/unemployment/all/country";
+  const singleCountry = "https://unemp-rates-api-4.onrender.com/api/unemployment/country/${countryCode}";
+  const singleCountryExample = "https://unemp-rates-api-4.onrender.com/api/unemployment/country/IN";
+  const selectedYear = "https://unemp-rates-api-4.onrender.com/api/unemployment/country/${countryCode}/year/${year}";
+  const selectedYearExample = "https://unemp-rates-api-4.onrender.com/api/unemployment/country/IN/year/2009";
+  const yearRange = "https://unemp-rates-api-4.onrender.com/api/unemployment/country/${countryCode}/fromYear/${fromYear}/toYear/${toYear}";
+  const yearRangeExample = "https://unemp-rates-api-4.onrender.com/api/unemployment/country/US/fromYear/2000/toYear/2002";
+  const editUrl = "https://unemp-rates-api-4.onrender.com/api/unemployment/edit";
 
 
   const handlePublic = () =>{
@@ -101,7 +101,7 @@ function App() {
 
               <div className='mt-1' >
                 <p className='px-2 mb-1 font-medium' >Usage example :-</p>
-                <ApiContainer url={allUrlExample} copy={false}/>
+                <ApiContainer url={allUrlExample} copy={true}/>
               </div>
 
               <p className='px-2 mb-1 font-medium' >Output example :-</p>
@@ -120,7 +120,7 @@ function App() {
 
               <div className='mt-1' >
                 <p className='px-2 mb-1 font-medium' >Usage example :-</p>
-                <ApiContainer url={singleCountryExample} copy={false}/>
+                <ApiContainer url={singleCountryExample} copy={true}/>
               </div>
 
               <p className='px-2 mb-1 font-medium' >Output example :-</p>
@@ -139,7 +139,7 @@ function App() {
 
               <div className='mt-1' >
                 <p className='px-2 mb-1 font-medium' >Usage example :-</p>
-                <ApiContainer url={selectedYearExample} copy={false}/>
+                <ApiContainer url={selectedYearExample} copy={true}/>
               </div>
 
               <p className='px-2 mb-1 font-medium' >Output example :-</p>
@@ -158,7 +158,7 @@ function App() {
 
               <div className='mt-1' >
                 <p className='px-2 mb-1 font-medium' >Usage example :-</p>
-                <ApiContainer url={yearRangeExample} copy={false}/>
+                <ApiContainer url={yearRangeExample} copy={true}/>
               </div>
 
               <p className='px-2 mb-1 font-medium' >Output example :-</p>
@@ -180,7 +180,7 @@ function App() {
 
               <div className='mt-1' >
                 <p className='px-2 mb-1 font-medium' >Usage example :-</p>
-                <ApiContainer url={editUrl} copy={false}/>
+                <ApiContainer url={editUrl} copy={true}/>
 
                 <p className='px-2 mb-1 font-medium' >Pass the Headers like this which contains API KEY :-</p>
                 <img src={ssHeader}
